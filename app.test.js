@@ -14,6 +14,11 @@ describe('Given an empty body request for POST /checkout', () => {
 })
 
 describe('Given an array of watch ids in the request body of POST /checkout', () => {
+    test('should return a response with 200 status code', async () => {
+        const body = ["001", "002", "001", "004", "003"]
+        const res = await request(app).post('/checkout').send(body);
+        expect(res.statusCode).toBe(200);
+    })
     test('the response content-type should be of type "application/json"', async () => {
         const body = ["001", "002", "001", "004", "003"]
         const res = await request(app).post('/checkout').send(body)
