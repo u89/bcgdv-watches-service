@@ -42,15 +42,18 @@ A service with a single API endpoint **POST /checkout** that accepts requests of
 
 
 ##### **Request**
-POST /checkout
+POST /checkout <br/>
 **Headers**
-Accept: application/json Content-Type: application/json
-**Body**
-```["001", "002", "001", "004", "003"]```
+Accept: application/json <br/>
+Content-Type: application/json <br/><br/>
+**Body**<br/>
+```["001", "002", "001", "004", "003"]```<br/>
+
 ##### **Response**
-**Headers**
-Content-Type: application/json
-**Body**
+
+**Headers**<br/>
+Content-Type: application/json<br/><br/>
+**Body**<br/>
 ```{ "price": 360 }```
 
 ## The Solution
