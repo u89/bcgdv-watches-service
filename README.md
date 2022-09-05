@@ -18,7 +18,28 @@ To test the application, run:
 ```
 npm test
 ```
+## Example
 
+Request
+```
+POST http://localhost:1989/checkout
+
+Headers
+    Accept: application/json
+    Content-Type: application/json
+
+Body
+    ["001", "002", "001", "004", "003"]
+```
+
+Response
+```
+Headers
+    Content-Type: application/json
+
+Body
+    {"price": 360}
+```
 ## The Task
 Build a simplified e-commerce API with a single endpoint that performs a checkout action. The single endpoint should take a list of watches and return the total cost.
 
@@ -74,4 +95,4 @@ This is just a quick implementation of the task above. The production solution s
 1. Use an actual database instead of a hard coded array of data (replace database.js content with the related database code). For the format of objectes used in this example (json and embedded json), I'd recommend mongoDB as a database.
 2. Implement "jest mock" tests to test the system with mock functions. For this, you will need to follow dependency injection principle first by injecting the database to the app (to be passed to the controller then to the model). This will allow you to test the app with your own test data as the database may change at any point of time and the prices and discounts won't be the same so the tests will fail.
 3. Use TypeScript instead of JavaScript so you get strong type checking and better compiler warnings.
-4. Dockerize it so you can deploy easly to any machine. No matter what OS you're running on, you'll have consisten environment every time.
+4. Dockerize it so you can deploy it easly to any machine. No matter what OS you're running on, you'll have consistent environment every time.
